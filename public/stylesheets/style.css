@@ -1,0 +1,22 @@
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #08f314e3;
+    background: #33adff;
+}
+.panel-info>.panel-heading {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success.focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success {
+    color: #fff;
+    background-color: #b85c66;
+    border-color: #4cae4c;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #ad2825;
+    border-color: #4cae4c;
+}
+

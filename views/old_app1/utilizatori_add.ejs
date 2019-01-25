@@ -1,0 +1,78 @@
+<%- include header %>
+    <div class="container col-sm-12" id="mainform">
+            <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                                     
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <center>
+                            <div class="panel-title">Inregistrare:</div> </center>
+                            <!-- <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/">Conectare(Sign in)</a></div> -->
+                        </div> 
+                        <div class="panel-body" >
+                            <form class="form-horizontal" role="form" method="post" action="/utilizatori-add" onSubmit="return checkblank(this);">
+                                <% if (message.length > 0) { %>
+                                <div class="alert alert-success col-sm-12"><%= message %></div>
+                                <% } %>
+                                <div id="signupalert" style="display:none" class="alert alert-danger">
+                                    <p>Error:</p>
+                                    <span></span>
+                                </div> 
+                                <div class="form-group">
+                                    <label for="first_name" class="col-md-3 control-label">Prenume:</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="first_name" placeholder="Prenume:" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name" class="col-md-3 control-label">Nume:</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="last_name" placeholder="Nume:" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mob_no" class="col-md-3 control-label">Telefon mobil:</label>
+                                    <div class="col-md-9">
+                                        <input type="number" class="form-control" name="mob_no" placeholder="Telefon mobil:" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                        <label for="email" class="col-md-3 control-label">E-mail:</label>
+                                        <div class="col-md-9">
+                                            <input type="email" class="form-control" name="email" placeholder="Email:" required>
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                        <label for="rol" class="col-md-3 control-label">Rolul dorit:</label>
+                                        <div class="col-md-9">
+                                            <!-- <input type="text" class="form-control" name="rol" placeholder="rol"> -->
+                                            <select name="rol" placeholder="Rolul dorit:">
+                                                <option value="admin">Administrator</option>
+                                                <option selected="selected" value="user">Evaluator</option>
+                                                <option value="userpsiho">Evaluator special</option>
+                                                <option value="secretar">Secretar/Coordonator</option>
+                                              </select>
+                                        </div>
+                                    </div>
+                                <div class="form-group">
+                                    <label for="user_name" class="col-md-3 control-label">Utilizator(User):</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="user_name" placeholder="utilizatorul dorit" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Parola:</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="password" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <!-- Button -->                                       
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Salvare date!</button>     
+                                    </div>
+                                </div>
+                            </form>
+                         </div>
+                    </div>
+         </div> 
+    </div>
+    <%- include footer %>

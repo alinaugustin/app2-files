@@ -1,0 +1,38 @@
+<%- include header %>
+
+<div class="table-wrapper">
+    <% if (manuale) {%>
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nr.</th>
+                    <th scope="col">Titlu:</th>
+                    <th scope="col">Disciplina:</th>
+                    <th scope="col">Nivel:</th>
+                    <th scope="col">Clasa</th>
+                    <th scope="col">Comisie</th>
+                    <th scope="col">Actiunea:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% manuale.forEach((manuale, id) => { %>
+                    <tr>
+                        <th scope="row"><%= manuale.nr %></th>
+                        <td><%= manuale.Titlu_auxiliar   %></td>
+                        <td><%= manuale.Disciplina %></td>
+                        <td><%= manuale.Nivel %></td>
+                        <td><%= manuale.Clasa %></td>
+                        <td><%= manuale.Comisia_nr %></td>
+                        <td>
+                            <a href="/baza-manuale/edit/<%= manuale.nr %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Editeaza</a>
+                            <a href="/baza-manuale/delete/<%= manuale.nr %>" class="btn btn-sm btn-danger">Sterge</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p class="text-center">Niciun manual gasit. Click <a href="/addman/">aici</a> sa adaugati manuale.</p>
+    <% } %>
+</div>
+ <%- include footer %>

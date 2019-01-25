@@ -1,0 +1,48 @@
+<%- include header %>
+<div class="row">
+      <div class="panel panel-info">
+<% if (cuprinsmail && subject) { %>
+        <div class="panel-body">
+          <div class="row">
+    <div class="container"><br />
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+      <center><h3>Trimite email</h3><br /></center>
+      <form action="/sendemailadmin" method="post" enctype="application/x-www-form-urlencoded">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+            <label for="to">To:</label>
+            <input type="email" class="form-control" name="to" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+            <label for="subject">Subiect:</label>
+            <input type="text" class="form-control" name="subject" value="<%- subject %>" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <label for="cuprinsmail">Cuprins:</label>
+              <textarea name="cuprinsmail" cols="5" rows="5"class="form-control" required><%- cuprinsmail %></textarea>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+            <button type="submit" class="btn btn-success">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    </div>
+</div>
+<% } %>
+</div>
+</div>
+<%- include footer %>

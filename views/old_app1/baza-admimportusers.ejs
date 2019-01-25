@@ -1,0 +1,33 @@
+
+<% include header.ejs %>
+
+<center>
+<div style="margin: 10px; height: 100px; background-color: whitesmoke" class="">
+<label for="raport"><b>De aici incarcati fisierul cu baza de utilizatori(numai format .csv)</b></label><br>
+<form ref='uploadForm' id='uploadForm' action='/uploadadminusers'  method='post' encType="multipart/form-data">
+<input type="file" name="fileToUploadadm" />
+<input type='submit' value='Upload!' />
+</center>
+</div>
+<br><br><br>
+<div class="container">
+        <% if (!username) { %>
+            <p class="text-center text-danger"><%= message %></p>
+        <% } else { %>
+            <center>
+                    <div style="margin: 10px; height: 100px; background-color: whitesmoke" class="">
+                        <label for="raport"><b>Raport incarcat</b></label><br>
+                        <center><a href="/download/csvusers/<%= username %>">Fisierul incarcat de dvs.!</a></center>
+                    </div>
+            </center>
+            
+
+            <center>
+                    <div style="margin: 10px; height: 100px; background-color:  whitesmoke" class="">
+                        <label for="raport"><b>Sterge raportul.</b></label><br>
+                        <center><a href="/delete/admincsvusers/<%= username %>">Click aici!</a></center>
+                    </div>
+            </center>  
+            <% }  %>          
+</div> 
+<% include footer.ejs %>  

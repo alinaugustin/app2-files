@@ -1,0 +1,27 @@
+
+<% include header.ejs %>
+<div class="container">
+    <% if (username) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+            <center>
+            <div style="margin: 10px; height: 100px; background-color:  whitesmoke" class="">
+                <label for="raport"><b>Fisierul incarcat</b></label><br>
+                <center><a href="/download/csvbazaman/<%= username %>">Fisierul incarcat de dvs.!</a></center>
+            </div>
+            </center>
+            <center>
+                    <div style="margin: 10px; height: 100px; background-color:  whitesmoke" class="">
+                        <label for="raport"><b>Sterge raportul.</b></label><br>
+                        <center><a href="/delete/admincsvbazaman/<%= username %>">Click aici!</a></center>
+                    </div>
+            </center> 
+            <center>
+                    <div style="margin: 10px; height: 100px; background-color:  whitesmoke" class="">
+                        <label for="raport"><b>Pentru a incarca un fisier</b></label><br>
+                        <center><a href="/baza-admimportbazaman">Click aici!</a></center>
+                    </div>
+            </center>   
+</div>
+</div>
+<% include footer.ejs %>   

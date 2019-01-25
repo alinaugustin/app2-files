@@ -1,0 +1,41 @@
+<% include header %>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+    <% if (user) { %>
+        <form class="add-user-form" action="" method="post" enctype="application/x-www-form-urlencoded">
+            <div class="form-">
+                <div class="form-group col-md-2">
+                    <label for="first-name">Nume</label>
+                    <input type="text" class="form-control" name="first_name" id="first-name" value="<%= user.first_name %>" required>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="last-name">Prenume</label>
+                    <input type="text" class="form-control" name="last_name" id="last_name" value="<%= user.last_name %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="mob_no">Telefon</label>
+                    <input type="mob_no" class="form-control" name="mob_no" id="mob_no" placeholder="Telefon:" value="<%= user.mob_no %>" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="user_name">Utilizator</label>
+                    <input type="text" class="form-control" name="user_name" id="user_name" value="<%= user.user_name %>" required disabled title="Utilizatorul nu se schimba! ">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" name="email" id="email" value="<%= user.email %>" required disabled title="E-mail-ul nu se schimba! ">
+                </div>
+            </div>
+            <div class="form-group col-md-4">
+                    <label for="password">Parola</label>
+                    <input type="text" class="form-control" name="password" id="password" required >
+            </div>
+            <button type="submit" class="btn btn-success float-right">Actualizeaza date:</button>
+        </form>
+    <% } else { %>
+        <p class="text-center">Date negasite. Adauga <a href="/utilizatori-add">noi</a> date.</p>
+    <% } %>
+</div>
+</div>
+<% include footer %>

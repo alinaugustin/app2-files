@@ -1,0 +1,46 @@
+<% include header %>
+
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+    <% if (manualeEvpdf) { %>
+            <center><div class="form-">
+                <center><div class="form-group col-md-2">
+                    <label for="Titlu_auxiliar">Titlu manual</label>
+                    <input type="text" class="form-control" name="Titlu_auxiliar" id="Titlu_auxiliar" value="<%= manualeEvpdf.Titlu_auxiliar %>" disabled>
+                </div></center>
+                <center><div class="form-group col-md-2">
+                    <label for="Disciplina">Disciplina</label>
+                    <input type="text" class="form-control" name="Disciplina" id="Disciplina" value="<%= manualeEvpdf.Disciplina %>" disabled>
+                </div></center>
+                <center><div class="form-group col-md-2">
+                    <label for="Nivel">Nivel</label>
+                    <input type="text" class="form-control" name="Nivel" id="Nivel" placeholder="Nivel:" value="<%= manualeEvpdf.Nivel %>" disabled>
+                </div></center>
+                <center><div class="form-group col-md-2">
+                    <label for="Clasa">Clasa</label>
+                    <input type="text" class="form-control" name="Clasa" id="Clasa" value="<%= manualeEvpdf.Clasa %>" disabled>
+                </div></center>
+                <center><div class="form-group col-md-2">
+                    <label for="Comisia_nr">Comisia_nr</label>
+                    <input type="text" class="form-control" name="Comisia_nr" id="Comisia_nr" value="<%= manualeEvpdf.Comisia_nr %>" disabled>
+                </div></center>
+            </div></center>
+            <hr align="center"> <br><br><br> <hr align="center">
+            <!-- prima sectiune -->
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">1. Proiectul de manual şcolar "01.002.040" trebuie să fie depersonalizat, astfel încât să nu conţină numele autorilor, numele, sigla/logoul ofertanților/altor ofertanți, cuvinte/imagini/elemente multimedia, nume de personaje, publicaţii și/sau alte semne particulare/date (inclusiv cele asupra cărora furnizorul de pachete educaţionale a achiziţionat şi deţine drepturi de autor) care pot conduce la identificarea autorilor/ofertanților.
+                    <center><p><font color="red">Valoarea selectata:<%= manualeEvpdf.cc1 %></font></p></center>
+                    <center><label for="ncc1">Argumente:</label></center>
+                    <center><textarea rows="80" cols="120" name="ncc1" value="<%= manualeEvpdf.ncc1 %>" disabled><%= manualeEvpdf.ncc1 %></textarea></center>   
+                </div>
+            </div>
+            <hr align="center"><br><br><br> <br><br><br><br><br><br> <br><br><br><br><br><br>
+              <!-- 2 sectiune -->      
+    
+    <% } else { %>
+        <p class="text-center">Date negasite. Selecteaza <a href="/select">noi</a> titlu.</p>
+    <% } %>
+
+<% include footer %>

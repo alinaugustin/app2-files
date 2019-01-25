@@ -1,0 +1,43 @@
+<%- include header %>
+<div class="table-wrapper">
+    <center>
+        <div style="margin: 10px; height: 100px; background-color: whitesmoke" class="">
+        <label for="raport"><b>Baza de date utilizatori</b></label><br>
+        <center><a href="/download/bazacsvusers/">Descarca</a></center>
+        </div>
+    </center>
+    <% if (utilizatori) {%>
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nr</th>
+                    <th scope="col">Nume</th>
+                    <th scope="col">Prenume</th>
+                    <th scope="col">Telefon</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% utilizatori.forEach((utilizatori, id) => { %>
+                    <tr>
+                        <th scope="row"><%= utilizatori.id %></th>
+                        <td><%= utilizatori.first_name %></td>
+                        <td><%= utilizatori.last_name %></td>
+                        <td><%= utilizatori.mob_no %></td>
+                        <td><%= utilizatori.email %></td>
+                        <td><%= utilizatori.user_name %></td>
+                        <td>
+                            <a href="/utilizatori-admin/edit/<%= utilizatori.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Editeaza</a>
+                            <a href="/utilizatori-admin/delete/<%= utilizatori.id %>" class="btn btn-sm btn-danger">Sterge</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p class="text-center">Niciun utilizator gasit. Click <a href="/utilizatori-add">aici</a> sa adaugati utilizatori.</p>
+    <% } %>
+</div>
+ <%- include footer %>

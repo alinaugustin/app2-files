@@ -1,0 +1,85 @@
+<%- include header %>
+<body id="clrblks">
+        <div class="container">
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title"><center>Selectare din lista:</center></div>
+                    <% if (message.length>0) { %>
+                    <p class="text-center text-danger"><%= message %></p>
+                    <% } %>
+                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                    <p>Error:</p>
+                    <span></span>
+                                </div>
+                        <!--<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>-->
+                    </div>
+                    <form class="add-user-form" action="/selectare" method="post" enctype="application/x-www-form-urlencoded">
+                    <div style="padding-top:30px" class="panel-body" >
+                        <div class="form-group">
+                            <center><label for="select" class="col-md-15 control-label">Selecteaza titlul din lista:</label>
+                                <div class="col-md-15">
+                                <!-- <input type="text" class="form-control" name="rol" placeholder="rol"> -->
+                                <select id="selectedManual" name="selectedManual">
+                                <option value="" selected="selected"></option>
+                                <% manuale.forEach((manuale) => { %>
+                                <option value=<%= manuale.Titlu_auxiliar %>><%= manuale.Titlu_auxiliar %></option>
+                                <% }) %>
+                                </select>
+                                </div>
+                                    <div class="col-md-15"><br>
+                                    <label for="select" class="col-md-15 control-label">Dati click pe buton: </label>
+                                    <input type='submit' name ="selecteaza">
+                                    </div>
+                                     <% if (!message) { %>
+                                            <center><p class="text-center">Niciun manual selectat.</p><center>
+                                        <% } %>
+                                </center>
+                                </div>
+                            </div>
+                        </form>                     
+                    </div>
+                 </div>
+            </div>
+            <% if (message) {%>
+            <div class="table-wrapper">
+
+                <% if (manuale) {%>
+                    <table class="table table-hovered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">nr</th>
+                                <th scope="col">Titlu</th>
+                                <th scope="col">Disciplina</th>
+                                <th scope="col">Clasa</th>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Editura</th>
+                                <!--<th scope="col">Action</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% manuale.forEach((manuale, nr) => { %>
+                                <tr>
+                                    <th scope="row"><%= manuale.nr %></th>
+                                    <td><%= manuale.Titlu_auxiliar %></td>
+                                    <td><%= manuale.Disciplina %></td>
+                                    <td><%= manuale.Clasa %></td>
+                                    <td><%= manuale.Autor %></td>
+                                    <td><%= manuale.Editura %></td>
+                                    <!-- <td>
+                                        <a href="/manuale-admin/edit/<%= manuale.id %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Editeaza</a>
+                                        <a href="/manuale-admin/delete/<%= manuale.id %>" class="btn btn-sm btn-danger">Sterge</a>
+                                    </td>
+                                    -->
+                                </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                <% } else { %>
+                    <p class="text-center">Niciun titlu gasit. Click <a href="/select">aici</a> sa adaugati titlul in baza.</p>
+                <% } %>
+            </div>
+            <% } else { %>
+                <p class="text-center">Nicio selectie.</p>
+            <% } %>    
+<%- include footer %>

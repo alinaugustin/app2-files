@@ -1,0 +1,115 @@
+<% include header %>
+<div class="container">
+    <% if (message) { %>
+        <p class="text-center text-danger"><%= message %></p>
+    <% } %>
+    <% if (manualeEv) { %>
+        <form class="add-user-form" action="" method="post" enctype="application/x-www-form-urlencoded">
+            <center><div class="form-">
+                <center><div class="form-group col-md-2">
+                    <label for="Titlu_auxiliar">Titlu manual</label>
+                    <input type="text" class="form-control" name="Titlu_auxiliar" id="Titlu_auxiliar" value="<%= manualeEv.Titlu_auxiliar %>" disabled>
+                </div></center>
+                <center><div class="form-group col-md-2">
+                    <label for="Disciplina">Disciplina</label>
+                    <input type="text" class="form-control" name="Disciplina" id="Disciplina" value="<%= manualeEv.Disciplina %>" disabled>
+                </div></center>
+                <center><div class="form-group col-md-2">
+                    <label for="Nivel">Nivel</label>
+                    <input type="text" class="form-control" name="Nivel" id="Nivel" placeholder="Nivel:" value="<%= manualeEv.Nivel %>" disabled>
+                </div></center>
+                <center><div class="form-group col-md-2">
+                    <label for="Clasa">Clasa</label>
+                    <input type="text" class="form-control" name="Clasa" id="Clasa" value="<%= manualeEv.Clasa %>" disabled>
+                </div></center>
+                <center><div class="form-group col-md-2">
+                    <label for="Comisia_nr">Comisia_nr</label>
+                    <input type="text" class="form-control" name="Comisia_nr" id="Comisia_nr" value="<%= manualeEv.Comisia_nr %>" disabled>
+                </div></center>
+            </div></center>
+            <hr align="center"> <br><br><br> <hr align="center">
+            <!-- prima sectiune -->
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">1. Proiectul de manual şcolar "01.002.040" trebuie să fie depersonalizat, astfel încât să nu conţină numele autorilor, numele, sigla/logoul ofertanților/altor ofertanți, cuvinte/imagini/elemente multimedia, nume de personaje, publicaţii și/sau alte semne particulare/date (inclusiv cele asupra cărora furnizorul de pachete educaţionale a achiziţionat şi deţine drepturi de autor) care pot conduce la identificarea autorilor/ofertanților.</div> </center>
+                    <!-- <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/">Conectare(Sign in)</a></div> -->
+                </div> 
+                <div class="form" >
+                    <form class="form-horizontal" role="form" method="post" action="" onSubmit="return checkblank(this);">
+                        <% if (message.length > 0) { %>
+                        <div class="alert alert-success col-sm-12"><%= message %></div>
+                        <% } %>
+                        
+                        <div id="signupalert" style="display:none" class="alert alert-danger">
+                            <p>Error:</p>
+                            <span></span>
+                        </div> 
+                            <div class="form-group col-md-9">
+                                <center><label for="cc1"">Alegeti Da sau Nu!</label>
+                                    <select name="cc1" placeholder="Da/Nu:">
+                                        <option selected="selected" value="Da">Da</option>
+                                        <option value="Nu">Nu</option>
+                                      </select>
+                                </center>
+                            </div>                           
+                                <div class="form-group col-md-9">
+                                    <center><label for="ncc1">Argumente:</label></center>
+                                    <center><textarea rows="7" cols="150" name="ncc1"></textarea></center>
+                                    </center>    
+                                </div>
+                                <div class="form-group col-md-9">                               
+                                <center><button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Salvare date!</button></center>     
+                                </div>
+                                </div>
+                    </form>
+                 </div>
+            </div>
+              <!-- 2 sectiune -->      
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">2. Proiectul de manual şcolar "01.002.040" respectă principiile echității, diversității, incluziunii și nondiscriminării, indiferent de rasă, naţionalitate, etnie, limbă, religie, categorie socială, convingeri, gen, orientare sexuală, vârstă, handicap, boală cronică necontagioasă, infectare HIV, apartenenţă la o categorie defavorizată. "</div> </center>
+                    <!-- <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/">Conectare(Sign in)</a></div> -->
+                </div> 
+                <div class="form" >
+                    <form class="form-horizontal" role="form" method="post" action="" onSubmit="return checkblank(this);">
+                        <% if (message.length > 0) { %>
+                        <div class="alert alert-success col-sm-12"><%= message %></div>
+                        <% } %>
+                        <div id="signupalert" style="display:none" class="alert alert-danger">
+                            <p>Error:</p>
+                            <span></span>
+                        </div> 
+                            <div class="form-group col-md-9">
+                                <center><label for="cc1"">Alegeti Da sau Nu!</label>
+                                    <select name="cc2" placeholder="Da/Nu:">
+                                        <option selected="selected" value="Da">Da</option>
+                                        <option value="Nu">Nu</option>
+                                      </select>
+                                </center>
+                            </div>                           
+                                <div class="form-group col-md-9">
+                                    <center><label for="ncc1">Argumente:</label></center>
+                                    <center><textarea rows="7" cols="150" name="ncc2"></textarea></center>
+                                    </center>    
+                                </div>
+                                <div class="form-group col-md-9">                               
+                                <center><button id="btn-signup" type="submit" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Salvare date!</button></center>     
+                                </div>
+                </div>
+                    </form>
+                </div>
+              <!-- 2 sectiune -->   
+                  
+
+            
+            <hr align="center">
+
+
+        <!-- <center><button type="submit" class="btn btn-success float-right">Actualizeaza date:</button></center>-->
+        </form>
+    <% } else { %>
+        <p class="text-center">Date negasite. Selecteaza <a href="/select">noi</a> titlu.</p>
+    <% } %>
+</div>
+</div>
+<% include footer %>

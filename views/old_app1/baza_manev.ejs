@@ -1,0 +1,44 @@
+<%- include header %>
+<div class="table-wrapper">
+    <% if (manuale) {%>
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nr.</th>
+                    <th scope="col">Titlu:</th>
+                    <th scope="col">Disciplina:</th>
+                    <th scope="col">Nivel:</th>
+                    <th scope="col">Clasa</th>
+                    <th scope="col">Comisie</th>
+                    <th scope="col">Evaluat:</th>
+                    <th scope="col">Actiunea:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% manuale.forEach((manuale, nr) => { %>
+                    <tr>
+                        <th scope="row"><%= manuale.nr %></th>
+                        <td><%= manuale.Titlu_auxiliar   %></td>
+                        <td><%= manuale.Disciplina %></td>
+                        <td><%= manuale.Nivel %></td>
+                        <td><%= manuale.Clasa %></td>
+                        <td><%= manuale.Comisia_nr %></td>
+                        <td><a class="btn btn-lg btn-primary" href="/baza-manev/edit/<%= manuale.nr %>" target="_blank" rel="noopener" role="button"><%= manuale.evaluat %></td>
+                        <td>
+                            <a href="/baza-manev/edit/<%= manuale.nr %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Evalueaza</a>
+                            <a href="/baza-manevpdf/edit/<%= manuale.nr %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">View</a>
+                            <a href="/exportToPdf/<%= manuale.nr %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">PDF</a>
+                            <a href="/baza-manev/" target="_blank" rel="noopener" class="btn btn-sm btn-danger"">ATENTIE!!!</a>
+                            <a href="/baza-manev/delete/<%= manuale.nr %>" class="btn btn-sm btn-danger">Sterge</a>
+
+                        </td>
+                        
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p class="text-center">Niciun manual gasit. Click <a href="/select">aici</a> sa adaugati manuale.</p>
+    <% } %>
+</div>
+ <%- include footer %>

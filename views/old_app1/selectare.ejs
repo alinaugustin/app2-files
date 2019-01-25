@@ -1,0 +1,41 @@
+<%- include header %>
+<div class="table-wrapper">
+    <% if (manuale2) {%>
+        <table class="table table-hovered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nr.</th>
+                    <th scope="col">Titlu:</th>
+                    <th scope="col">Editura:</th>
+                    <th scope="col">Disciplina:</th>
+                    <th scope="col">Nivel:</th>
+                    <th scope="col">Clasa</th>
+                    <th scope="col">Autor:</th>
+                    <th scope="col">Comisie</th>
+                    <th scope="col">Actiunea:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% manuale2.forEach((manuale2) => { %>
+                    <tr>
+                        <th scope="row"><%= manuale2.nr %></th>
+                        <td><%= manuale2.Titlu_auxiliar   %></td>
+                        <td><%= manuale2.Editura   %></td>
+                        <td><%= manuale2.Disciplina %></td>
+                        <td><%= manuale2.Nivel %></td>
+                        <td><%= manuale2.Clasa %></td>
+                        <td><%= manuale2.Autor %></td>
+                        <td><%= manuale2.Comisia_nr %></td>
+                        <td>
+                            <a href="/evaluare/edit/<%= manuale2.nr %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Evalueaza</a>
+                            <a href="/evaluare/delete/<%= manuale2.nr %>" class="btn btn-sm btn-danger">Sterge</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p class="text-center">Niciun manual gasit. Click <a href="/select">aici</a> sa adaugati manuale2.</p>
+    <% } %>
+</div>
+ <%- include footer %>

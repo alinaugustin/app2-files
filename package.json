@@ -1,0 +1,42 @@
+{
+  "name": "app2-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "snyk test",
+    "start": "nodemon app.js"
+  },
+  "author": {
+    "name": "alindebian",
+    "email": "alindebian@gmail.com",
+    "url": "http://artesacre.ro"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^3.0.3",
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.0.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "fast-csv": "^2.4.1",
+    "helmet": "^3.15.0",
+    "html-pdf": "^2.1.0",
+    "jshint": "^2.9.7",
+    "mime": "2.4.0",
+    "mysql": "^2.13.0",
+    "nodemailer": "^5.1.1",
+    "nodemon": "^1.18.9",
+    "path": "^0.12.7",
+    "postgresql": "0.0.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "snyk": "^1.122.0"
+  }
+}
