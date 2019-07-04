@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "snyk test",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": {
     "name": "alindebian",
@@ -34,9 +36,9 @@
     "nodemon": "^1.18.9",
     "path": "^0.12.7",
     "postgresql": "0.0.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "snyk": "^1.189.0"
   },
-  "devDependencies": {
-    "snyk": "^1.122.0"
-  }
+  "devDependencies": {},
+  "snyk": true
 }
