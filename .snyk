@@ -8,3 +8,11 @@ patch:
         patched: '2019-12-19T08:54:20.432Z'
     - jshint > lodash:
         patched: '2019-12-19T08:54:20.432Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-12-19T08:55:49.447Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/dep-graph > lodash:
+        patched: '2019-12-19T08:55:49.447Z'
+    - snyk > snyk-nuget-plugin > dotnet-deps-parser > lodash:
+        patched: '2019-12-19T08:55:49.447Z'
+    - snyk > @snyk/snyk-cocoapods-plugin > @snyk/cocoapods-lockfile-parser > @snyk/dep-graph > lodash:
+        patched: '2019-12-19T08:55:49.447Z'
