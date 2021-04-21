@@ -28,7 +28,7 @@
     "express-validator": "^6.0.0",
     "fast-csv": "^2.4.1",
     "helmet": "^3.21.1",
-    "html-pdf": "^2.1.0",
+    "html-pdf": "^3.0.0",
     "jshint": "^2.9.7",
     "mime": "2.4.0",
     "mysql": "^2.13.0",
